@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Space × Providence Prep</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --coral: #E8714A;
+      --coral-light: #F2956E;
+      --green: #2ecc8e;
+      --green-dark: #25a872;
+      --cream: #FAF6F0;
+      --cream-dark: #F0E9DE;
+      --warm-brown: #6B4C3B;
+      --text-dark: #2C1F17;
+      --text-mid: #5A4035;
+      --text-light: #8C6E5A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text-dark);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background-color: var(--coral);
+      padding: 70px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .collab-tag {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(48px, 8vw, 80px);
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.88);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 72px 24px 56px;
+      text-align: center;
+    }
+
+    .intro p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .intro p strong {
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--coral);
+      margin: 40px auto;
+      opacity: 0.5;
+    }
+
+    /* ── PROGRAM OVERVIEW ── */
+    .overview {
+      background-color: var(--cream-dark);
+      padding: 72px 24px;
+    }
+
+    .overview-inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .overview h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+
+    .overview h2 em { font-style: italic; }
+
+    .overview-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 44px;
+    }
+
+    @media (max-width: 640px) {
+      .overview-body { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    .overview-text p {
+      font-size: 16px;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+    }
+
+    .details-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      border-top: 4px solid var(--coral);
+    }
+
+    .details-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .detail-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--cream);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .detail-content {
+      flex: 1;
+    }
+
+    .detail-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+
+    .detail-value {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+    }
+
+    /* ── SESSIONS ── */
+    .sessions {
+      padding: 72px 24px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .sessions h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .sessions h2 em { font-style: italic; }
+
+    .sessions-intro {
+      font-size: 15px;
+      color: var(--text-light);
+      margin-bottom: 40px;
+    }
+
+    .sessions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .session-pill {
+      background: #fff;
+      border: 1px solid rgba(232, 113, 74, 0.18);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .session-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 113, 74, 0.12);
+    }
+
+    .session-emoji {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream-dark);
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .session-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+
+    .session-type {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── COLLECTIVE ── */
+    .collective {
+      background: var(--green);
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .collective h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .collective h2 em { font-style: italic; }
+
+    .collective p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .collective-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SURVEY ── */
+    .survey {
+      padding: 72px 24px 80px;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .survey-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .survey-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .survey-header h2 em { font-style: italic; }
+
+    .survey-header p {
+      font-size: 15px;
+      color: var(--text-light);
+    }
+
+    .form-group {
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+    }
+
+    .label-note {
+      font-weight: 300;
+      font-size: 11px;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--text-light);
+      margin-left: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dark);
+      background: #fff;
+      border: 1.5px solid rgba(107, 76, 59, 0.18);
+      border-radius: 10px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--coral);
+      box-shadow: 0 0 0 4px rgba(232, 113, 74, 0.1);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* Radio / Checkbox group */
+    .radio-group,
+    .check-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .radio-row,
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      padding: 12px 16px;
+      background: #fff;
+      border: 1.5px solid rgba(107, 76, 59, 0.15);
+      border-radius: 10px;
+      transition: border-color 0.2s, background 0.2s;
+      user-select: none;
+    }
+
+    .radio-row:hover,
+    .check-row:hover {
+      border-color: var(--coral-light);
+      background: rgba(232, 113, 74, 0.04);
+    }
+
+    .radio-row input,
+    .check-row input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--coral);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .radio-label,
+    .check-label {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .radio-row input:checked ~ .radio-label,
+    .check-row input:checked ~ .check-label {
+      font-weight: 400;
+    }
+
+    .radio-row:has(input:checked),
+    .check-row:has(input:checked) {
+      border-color: var(--coral);
+      background: rgba(232, 113, 74, 0.06);
+    }
+
+    /* FAQ link */
+    .faq-link-wrap {
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 32px;
+    }
+
+    .faq-link {
+      font-size: 14px;
+      color: var(--coral);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232, 113, 74, 0.4);
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .faq-link:hover {
+      color: var(--coral-light);
+      border-color: var(--coral-light);
+    }
+
+    /* Submit */
+    .submit-wrap {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn-submit {
+      background: var(--coral);
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: none;
+      padding: 18px 48px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: var(--coral-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 113, 74, 0.3);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .submit-note {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 14px;
+    }
+
+    /* ── SUCCESS STATE ── */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 60px 24px;
+    }
+
+    .success-message.visible {
+      display: block;
+    }
+
+    .success-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .success-message h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .success-message p {
+      font-size: 16px;
+      color: var(--text-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-dark);
+      padding: 36px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .footer-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1, .hero-sub, .collab-tag {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .collab-tag { animation-delay: 0.1s; }
+    .hero h1    { animation-delay: 0.25s; }
+    .hero-sub   { animation-delay: 0.45s; }
+
+    /* Scroll reveal utility */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="collab-tag">Create Space × Providence Prep</div>
+    <h1>A little space.<br><em>Just for you.</em></h1>
+    <p class="hero-sub">We'd love to know if you're interested</p>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro reveal">
+    <p>When my kids were in daycare, I always wished I had more time to actually <strong>connect</strong> with the other moms — not just the quick wave at drop-off or the rushed hello at pick-up. There was so much more I wanted to know about the women I kept seeing every single day.</p>
+    <p>I'm so excited for the opportunity to bring Create Space to the Providence Prep community.</p>
+    <div class="divider"></div>
+    <p style="font-size: 16px; color: var(--text-light); font-family: 'Jost', sans-serif;">Take two minutes to fill out this short form and let us know if you're in.</p>
+  </section>
+
+  <!-- PROGRAM OVERVIEW -->
+  <section class="overview">
+    <div class="overview-inner reveal">
+      <span class="section-label">About the Program</span>
+      <h2>What is <em>Create Space?</em></h2>
+
+      <div class="overview-body">
+        <div class="overview-text">
+          <p>Create Space is a 10-week program that blends hands-on creative sessions — think watercolor, sourdough, embroidery, candle making — with guided self-discovery, all inside a small, intimate cohort.</p>
+          <p>It's designed around <strong>space over productivity</strong>. No planning. No performing. No agenda to check off. You simply show up — and somewhere along the way, you leave with clearer self-awareness, deep new friendships, and often a hobby you didn't expect to love.</p>
+          <p>Sessions will take place right here at Providence Prep, so there's no extra drive across town. Just walk in, settle in, and breathe.</p>
+        </div>
+
+        <div class="details-card">
+          <h3>Program Details</h3>
+          <div class="detail-row">
+            <div class="detail-icon">📍</div>
+            <div class="detail-content">
+              <div class="detail-label">Location</div>
+              <div class="detail-value">Providence Prep</div>
+            </div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-icon">🕖</div>
+            <div class="detail-content">
+              <div class="detail-label">Time</div>
+              <div class="detail-value">6:30 – 8:30 pm</div>
+            </div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-icon">📅</div>
+            <div class="detail-content">
+              <div class="detail-label">Length</div>
+              <div class="detail-value">10 weeks · 9 sessions total</div>
+            </div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-icon">👥</div>
+            <div class="detail-content">
+              <div class="detail-label">Cohort Size</div>
+              <div class="detail-value">Capped at 15 participants</div>
+            </div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-icon">💛</div>
+            <div class="detail-content">
+              <div class="detail-label">Enrollment Fee</div>
+              <div class="detail-value">$475</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSIONS -->
+  <section class="sessions reveal">
+    <span class="section-label">What You'll Do</span>
+    <h2>A little of <em>everything.</em></h2>
+    <p class="sessions-intro">Six in-person creative sessions + three virtual self-discovery sessions via Zoom.</p>
+
+    <div class="sessions-grid">
+      <div class="session-pill">
+        <div class="session-emoji">🎨</div>
+        <div>
+          <div class="session-name">Watercolor</div>
+          <div class="session-type">In-person creative</div>
+        </div>
+      </div>
+      <div class="session-pill">
+        <div class="session-emoji">🧵</div>
+        <div>
+          <div class="session-name">Embroidery</div>
+          <div class="session-type">In-person creative</div>
+        </div>
+      </div>
+      <div class="session-pill">
+        <div class="session-emoji">🍞</div>
+        <div>
+          <div class="session-name">Sourdough</div>
+          <div class="session-type">In-person creative</div>
+        </div>
+      </div>
+      <div class="session-pill">
+        <div class="session-emoji">🀄</div>
+        <div>
+          <div class="session-name">Mahjong</div>
+          <div class="session-type">In-person creative</div>
+        </div>
+      </div>
+      <div class="session-pill" style="grid-column: 1 / -1; border-style: dashed;">
+        <div class="session-emoji">✨</div>
+        <div>
+          <div class="session-name">Two Additional Classes</div>
+          <div class="session-type">In-person creative · TBD</div>
+        </div>
+      </div>
+      <div class="session-pill" style="grid-column: 1 / -1; background: rgba(46, 204, 142, 0.06); border-color: rgba(46, 204, 142, 0.25);">
+        <div class="session-emoji" style="background: rgba(46,204,142,0.12);">💬</div>
+        <div>
+          <div class="session-name">Three Virtual Self-Discovery Sessions</div>
+          <div class="session-type">Zoom · Guided reflection & connection</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIVE -->
+  <section class="collective reveal">
+    <h2>Become a member of the<br><em>Create Space Collective</em></h2>
+    <p>Enrollment includes membership in our growing community — with events, connection, and a space that keeps giving long after the 10 weeks are over.</p>
+    <span class="collective-badge">🌿 Community included with enrollment</span>
+  </section>
+
+  <!-- SURVEY FORM -->
+  <section class="survey">
+    <div class="survey-header reveal">
+      <span class="section-label">Interest Form</span>
+      <h2>Are you <em>in?</em></h2>
+      <p>This is just an interest survey — no commitment required. We'll follow up with enrollment details once we know the timing that works best for this group.</p>
+    </div>
+
+    <div class="faq-link-wrap reveal">
+      <a class="faq-link" href="#" target="_blank">Have questions? Browse our FAQs →</a>
+    </div>
+
+    <form id="surveyForm" class="reveal" onsubmit="handleSubmit(event)">
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="First and last name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" required />
+      </div>
+
+      <!-- Phone (optional) -->
+      <div class="form-group">
+        <label for="phone">Phone Number <span class="label-note">optional</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="(704) 555-0100" />
+      </div>
+
+      <!-- Interest -->
+      <div class="form-group">
+        <label>Are you interested in joining Create Space?</label>
+        <div class="radio-group">
+          <label class="radio-row">
+            <input type="radio" name="interest" value="yes_definitely" required />
+            <span class="radio-label">Yes — count me in! 🙋‍♀️</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="interest" value="yes_maybe" />
+            <span class="radio-label">Interested, but I'd like to learn more first</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="interest" value="not_right_now" />
+            <span class="radio-label">Not right now, but keep me posted</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Day preference -->
+      <div class="form-group">
+        <label>Which night(s) of the week work best for you? <span class="label-note">select all that apply</span></label>
+        <div class="check-group">
+          <label class="check-row">
+            <input type="checkbox" name="days" value="Monday" />
+            <span class="check-label">Monday</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="days" value="Tuesday" />
+            <span class="check-label">Tuesday</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="days" value="Wednesday" />
+            <span class="check-label">Wednesday</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="days" value="Thursday" />
+            <span class="check-label">Thursday</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="days" value="Friday" />
+            <span class="check-label">Friday</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Self-reflection format preference -->
+      <div class="form-group">
+        <label>How would you prefer to attend the Self-Discovery sessions? <span class="label-note">select all that apply</span></label>
+        <div class="check-group">
+          <label class="check-row">
+            <input type="checkbox" name="session_format" value="zoom" />
+            <span class="check-label">Via Zoom — I love the flexibility of joining from home</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="session_format" value="in_person" />
+            <span class="check-label">In-person — I'd love to keep all sessions together</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="session_format" value="no_preference" />
+            <span class="check-label">No preference — either works for me!</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Anything else -->
+      <div class="form-group">
+        <label for="notes">Anything else you'd like us to know? <span class="label-note">optional</span></label>
+        <textarea id="notes" name="notes" placeholder="Questions, scheduling needs, or just a hello..."></textarea>
+      </div>
+
+      <div class="submit-wrap">
+        <button type="submit" class="btn-submit">Submit My Interest</button>
+        <p class="submit-note">No commitment. No spam. Just a little step toward something good.</p>
+      </div>
+    </form>
+
+    <!-- Success state -->
+    <div class="success-message" id="successMessage">
+      <div class="success-icon">🌿</div>
+      <h3>You're on our radar!</h3>
+      <p>Thank you for taking a few minutes to share your interest. We'll be in touch with details soon — we're so glad you're here.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Create Space</div>
+    <div class="footer-sub">A program by Find Your More · Charlotte, NC</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Form submit
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('surveyForm').style.display = 'none';
+      document.getElementById('successMessage').classList.add('visible');
+      window.scrollTo({ top: document.getElementById('successMessage').offsetTop - 80, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
