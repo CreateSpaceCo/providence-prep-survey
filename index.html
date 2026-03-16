@@ -748,122 +748,6 @@
     <span class="collective-badge">🌿 Community included with enrollment</span>
   </section>
 
-  <!-- SURVEY FORM -->
-  <section class="survey">
-    <div class="survey-header reveal">
-      <span class="section-label">Interest Form</span>
-      <h2>Are you <em>in?</em></h2>
-      <p>This is just an interest survey — no commitment required. We'll follow up with enrollment details once we know the timing that works best for this group.</p>
-    </div>
-
-    <div class="faq-link-wrap reveal">
-      <a class="faq-link" href="#" target="_blank">Have questions? Browse our FAQs →</a>
-    </div>
-
-    <form id="surveyForm" class="reveal" onsubmit="handleSubmit(event)">
-      <!-- Name -->
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="First and last name" required />
-      </div>
-
-      <!-- Email -->
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="you@email.com" required />
-      </div>
-
-      <!-- Phone (optional) -->
-      <div class="form-group">
-        <label for="phone">Phone Number <span class="label-note">optional</span></label>
-        <input type="tel" id="phone" name="phone" placeholder="(704) 555-0100" />
-      </div>
-
-      <!-- Interest -->
-      <div class="form-group">
-        <label>Are you interested in joining Create Space?</label>
-        <div class="radio-group">
-          <label class="radio-row">
-            <input type="radio" name="interest" value="yes_definitely" required />
-            <span class="radio-label">Yes — count me in! 🙋‍♀️</span>
-          </label>
-          <label class="radio-row">
-            <input type="radio" name="interest" value="yes_maybe" />
-            <span class="radio-label">Interested, but I'd like to learn more first</span>
-          </label>
-          <label class="radio-row">
-            <input type="radio" name="interest" value="not_right_now" />
-            <span class="radio-label">Not right now, but keep me posted</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Day preference -->
-      <div class="form-group">
-        <label>Which night(s) of the week work best for you? <span class="label-note">select all that apply</span></label>
-        <div class="check-group">
-          <label class="check-row">
-            <input type="checkbox" name="days" value="Monday" />
-            <span class="check-label">Monday</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" name="days" value="Tuesday" />
-            <span class="check-label">Tuesday</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" name="days" value="Wednesday" />
-            <span class="check-label">Wednesday</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" name="days" value="Thursday" />
-            <span class="check-label">Thursday</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" name="days" value="Friday" />
-            <span class="check-label">Friday</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Self-reflection format preference -->
-      <div class="form-group">
-        <label>How would you prefer to attend the Self-Discovery sessions? <span class="label-note">select all that apply</span></label>
-        <div class="check-group">
-          <label class="check-row">
-            <input type="checkbox" name="session_format" value="zoom" />
-            <span class="check-label">Via Zoom — I love the flexibility of joining from home</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" name="session_format" value="in_person" />
-            <span class="check-label">In-person — I'd love to keep all sessions together</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" name="session_format" value="no_preference" />
-            <span class="check-label">No preference — either works for me!</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Anything else -->
-      <div class="form-group">
-        <label for="notes">Anything else you'd like us to know? <span class="label-note">optional</span></label>
-        <textarea id="notes" name="notes" placeholder="Questions, scheduling needs, or just a hello..."></textarea>
-      </div>
-
-      <div class="submit-wrap">
-        <button type="submit" class="btn-submit">Submit My Interest</button>
-        <p class="submit-note">No commitment. No spam. Just a little step toward something good.</p>
-      </div>
-    </form>
-
-    <!-- Success state -->
-    <div class="success-message" id="successMessage">
-      <div class="success-icon">🌿</div>
-      <h3>You're on our radar!</h3>
-      <p>Thank you for taking a few minutes to share your interest. We'll be in touch with details soon — we're so glad you're here.</p>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Create Space</div>
@@ -882,14 +766,7 @@
       });
     }, { threshold: 0.12 });
     revealEls.forEach(el => observer.observe(el));
-
-    // Form submit
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('surveyForm').style.display = 'none';
-      document.getElementById('successMessage').classList.add('visible');
-      window.scrollTo({ top: document.getElementById('successMessage').offsetTop - 80, behavior: 'smooth' });
-    }
   </script>
 </body>
 </html>
+
